@@ -1,0 +1,147 @@
+.table-modification {
+  $color: #0e213f;
+
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+
+  .row {
+    display: table-row;
+  }
+
+  .cell-head,
+  .cell {
+    display: table-cell;
+    height: 56px;
+    vertical-align: middle;
+    padding-left: 14px;
+    padding-right: 14px;
+    color: $color;
+
+    &:last-of-type {
+    }
+  }
+
+  // Шапка таблицы
+  .row-head {
+    .cell {
+      padding-top: 13px;
+      padding-bottom: 13px;
+      font-size: 14px;
+      line-height: 1.07;
+      font-weight: bold;
+      background-color: #d3d3d3;
+    }
+  }
+
+  // Row данных
+  .row-mod {
+    &:hover .cell {
+      background-color: #fffcd4;
+    }
+    .cell {
+      padding-top: 13px;
+      padding-bottom: 13px;
+      font-size: 15px;
+      border-bottom: 1px solid #979797;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cell-holes,
+    .cell-pcd {
+      font-weight: bold;
+    }
+
+    .cell-art {
+      color: rgba($color, 0.5);
+    }
+
+    .cell-color {
+      text-decoration: underline;
+    }
+
+    .cell-price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #265329;
+    }
+
+    .cell-prices {
+      color: #265329;
+    }
+
+    .cell-order {
+      // padding-right: 0;
+      padding-left: 0;
+      text-align: center;
+
+      .btn-order {
+        display: block;
+        width: 100%;
+        height: 27px;
+        padding: 0 13px;
+        line-height: 27px;
+        font-weight: 600;
+        color: #3a89bd;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        text-decoration: underline;
+
+        &:hover {
+          color: #fff;
+          background-color: #346c36;
+          border-radius: 100px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  // Ширины ячеек
+  .cell-width {
+    width: 92px;
+  }
+
+  .cell-diameter {
+    width: 81px;
+  }
+
+  .cell-radius {
+    width: 83px;
+  }
+
+  .cell-holes {
+    width: 80px;
+  }
+
+  .cell-pcd {
+    width: 111px;
+  }
+
+  .cell-dia {
+    width: 69px;
+  }
+
+  .cell-art {
+    width: 90px;
+  }
+
+  .cell-color {
+    width: 135px;
+  }
+
+  .cell-price {
+    width: 115px;
+  }
+
+  .cell-prices {
+    width: 115px;
+  }
+
+  .cell-order {
+    width: 86px;
+  }
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Карточка товара | Hastore - Литые диски для внедорожников</title>
+  <link href="/css/common.css" rel="stylesheet"><link href="/css/card.css" rel="stylesheet"></head>
+  <body class="card-page">
+        <header class="header">
+          <div class="header-top">
+            <div class="container-lg">
+                  <nav class="navigation">
+                    <ul class="nav-list">
+                      <li class="nav-item"><a class="nav-link no-active" href="">О компании</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{{ route "catalog" }}">Каталог</a></li>
+                      <li class="nav-item"><a class="nav-link no-active" href="">Доставка и оплата</a></li>
+                      <li class="nav-item"><a class="nav-link no-active" href="">Контакты</a></li>
+                      <li class="nav-item"><a class="nav-link no-active" href="">Галерея</a></li>
+                      <li class="nav-item"><a class="nav-link no-active" href="">Блог</a></li>
+                      <li class="nav-item"><a class="nav-link no-active" href="">Отзывы</a></li>
+                    </ul>
+                  </nav>
+              <div class="header-phone"><a class="phone" href="tel:+79169855627">+7 916 985-56-27</a></div>
+            </div>
+          </div>
+          <div class="header-bottom white">
+            <div class="container-lg">
+              <div class="header-logo"><a href="{{ route "home" }}"><img class="logo" src="/images/logo-dark.svg"></a></div>
+                  <nav class="navigation-cat theme-white">
+                    <ul class="nav-list">
+                      <li class="nav-item"><a class="nav-link" href="">Диски для внедорожников</a></li>
+                      <li class="nav-item"><a class="nav-link no-active" href="">Диски для легковых</a></li>
+                      <li class="nav-item"><a class="nav-link no-active" href="">Комплектующие</a></li>
+                      <li class="nav-item"><a class="nav-link no-active" href="">Свет</a></li>
+                      <li class="nav-item"><a class="nav-link no-active" href="">Тюнинг</a></li>
+                      <li class="nav-item"><a class="nav-link no-active" href="">Шины</a></li>
+                    </ul>
+                  </nav>
+              <div class="header-search">
+                <div class="input-search-wrap">
+                  <input class="input-search" type="text" placeholder="Поиск">
+                </div><span class="close-search"></span>
+              </div>
+            </div>
+          </div>
+        </header>
+    <pre>{{ dbg .Product }}</pre>
+    <section class="card">
+      <div class="container-lg">
+        <div class="card-title">
+          <div class="h1 title">{{ .Product.Name }}</div>
+          <div class="code-number">Артикул: <span class="code">{{ .Product.Code }}</span></div>
+        </div>
+        <div class="card-container">
+          <div class="card-gallery"></div>
+          <div class="card-info">
+            <div class="price-buy">
+              <div class="price">от <span>{{ money .Product.GetMeta.MinPrice 0 }}</span> <span class="rub">₽</span> за 1 шт.</div>
+              <button class="btn btn-green btn-round btn-buy">Заказать в 1 клик</button>
+            </div>
+            <div class="stock-delivery">
+              <div class="stock">Есть в наличии</div>
+              <div class="delivery">Доставим в течении 2х дней</div>
+            </div>
+            <div class="review-short-desc">
+              <div class="review">
+                <div class="title">Отзывы</div>
+                <div class="display-review">
+                  Тут отзыв. Откуда он берется? Тут только один отзыв? Блок, в котором он находится - фиксированный?
+                  Фиксированный по высоте? Рейтинг к чему? Сами диски, вроде, хорошие.
+                </div>
+              </div>
+              <div class="short-desc">
+                <div class="title">Коротко о товаре</div>
+                <div class="display-desc">
+                  Тут коротко о товаре. Более менее понятно. А что происходит, когда нажимается кнопка
+                  "показать полностью"? Появляется колбаса текста? Ну а диски.. хорошие!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-tabs">
+        <div class="tab-container">
+          <div class="tabs">
+            <div class="tab-wrapper container-lg">
+              <button class="tab defaultOpen" data-index="0">Размеры и модификации</button>
+              <button class="tab" data-index="1">О товаре</button>
+              <button class="tab" data-index="2">Доставка и оплата</button>
+              <button class="tab" data-index="3">Все отзывы (число)</button>
+            </div>
+          </div>
+          <div class="tabs-content">
+            <div class="tab-content container-lg">
+              <div class="table-modification">
+                <div class="row row-head">
+                  <div class="cell cell-width">Ширина, мм</div>
+                  <div class="cell cell-diameter">Диаметр, "</div>
+                  <div class="cell cell-radius">Вылет, мм</div>
+                  <div class="cell cell-holes">Кол-во отверстий</div>
+                  <div class="cell cell-pcd">Диаметр распо-<br>ложения (PCD)</div>
+                  <div class="cell cell-dia">Ступица (DIA)</div>
+                  <div class="cell cell-art">Артикул</div>
+                  <div class="cell cell-color">Цвет</div>
+                  <div class="cell cell-price">Цена (1 шт)</div>
+                  <div class="cell cell-prices">Цена (4 шт)</div>
+                  <div class="cell cell-order"></div>
+                </div>{{ range $mods := .Product.GetMods }}
+                              <div class="row row-mod">
+                                <div class="cell cell-width">{{ $mods.J }}</div>
+                                <div class="cell cell-diameter">{{ $mods.D }}</div>
+                                <div class="cell cell-radius">{{ $mods.ET }}</div>
+                                <div class="cell cell-holes">{{ $mods.HolesN }}</div>
+                                <div class="cell cell-pcd">{{ $mods.PCD }}</div>
+                                <div class="cell cell-dia">{{ $mods.DIA }}</div>
+                                <div class="cell cell-art" title="{{ $mods.Code }}">{{ $mods.Code }}</div>
+                                <div class="cell cell-color" title="{{ $mods.Color }}">{{ $mods.Color }}</div>
+                                <div class="cell cell-price" title="{{ $mods.Price }}">{{ $mods.Price }} руб</div>
+                                <div class="cell cell-prices">{{ $mods.Price }} руб</div>
+                                <div class="cell cell-order">
+                                  <button class="btn-order">Заказать</button>
+                                </div>
+                              </div>{{end}}
+              </div>
+            </div>
+            <div class="tab-content tab-content-desc container">
+<p class="about-desc">
+   Диски отличные! Нестандартные цвета - красный+черный. Очень крепкие, идеально подошли (брал для Range Rоver). И еще много много текста, который будет имитировать описание. <br> Интересно, какой по высоте будет этот блок? И будет ли он обрезаться? <b><-- Сюда смотри!</b> <br> <br>
+  Hello description!
+</p>
+            </div>
+            <div class="tab-content container">
+              <h3>Доставка и оплата</h3>
+            </div>
+            <div class="tab-content container">
+              <h3>Все отзывы (число)</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+        <div class="popup-overlay">
+          <div class="popup popup-order"><i class="icon-close"></i>
+            <div class="order-info">
+              <h2 class="h1 title">{{ .Product.Name }}</h2>
+              <div class="price">от <span>{{ money .Product.GetMeta.MinPrice 0 }}</span> <span class="rub">₽</span> за 1 шт.</div>
+            </div>
+            <div class="order-form">
+              <div class="order-line"><span class="name">Имя</span>
+                <input class="order-input" type="text">
+              </div>
+              <div class="order-line"><span class="name">Мобильный телефон</span>
+                <input class="order-input" type="text">
+              </div>
+            </div>
+            <div class="order-action">
+              <button class="btn btn-lightgreen btn-round btn-order">Заказать</button>
+              <button class="btn btn-transparent btn-cancel-order">Отменить заказ</button>
+            </div>
+          </div>
+        </div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-logo-copyright">
+        <div class="footer-logo"><a href="index.html"><img class="logo" src="/images/logo-white.svg" alt="logo.svg"></a></div>
+        <div class="copyright"><span class="info info-copyright">© Hastore.ru 2014 - 2017 <br>Все права защищены</span></div>
+      </div>
+      <ul class="contacts-list">
+        <li class="contact"><span class="contact-title">+7 916 985-56-27</span><span class="contact-desc">Ежедневно <br>с 10:00 до 20:00 по МСК</span></li>
+        <li class="contact"><span class="contact-title">E-mail</span><span class="contact-desc">mail@hastore.ru</span></li>
+        <li class="contact"><span class="contact-title">Наш адрес</span><span class="contact-desc">г. Балашиха, Ласточкин проезд, владение 6</span></li>
+      </ul>
+      <div class="social-network">
+        <div class="title">Мы в соцсетях</div>
+<div class="social-list"><a class="social-item vk" href=""></a><a class="social-item fb" href=""></a><a class="social-item inst" href=""></a><a class="social-item odn" href=""></a><a class="social-item dd" href=""></a></div>
+      </div>
+      <ul class="footer-nav">
+        <li class="nav-item"><a class="nav-link no-active" href="">О нас</a></li>
+        <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+        <li class="nav-item"><a class="nav-link no-active" href="">Доставка и оплата</a></li>
+        <li class="nav-item"><a class="nav-link no-active" href="">Контакты</a></li>
+        <li class="nav-item"><a class="nav-link no-active" href="">Галерея</a></li>
+        <li class="nav-item"><a class="nav-link no-active" href="">Блог</a></li>
+        <li class="nav-item"><a class="nav-link no-active" href="">Отзывы</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p class="info info-offer">Данный интернет-сайт носит исключительно информационный характер и ни при <br> каких условиях не является публичной офертой.</p>
+      <p class="info info-copying">Любое копирование <br>материалов сайта запрещено.</p>
+    </div>
+  </div>
+</footer>
+  <script type="text/javascript" src="/js/common.js"></script><script type="text/javascript" src="/js/card.js"></script></body>
+</html>

@@ -1,0 +1,10 @@
+section.panel.panel-catalog-list
+  div.panel-body
+    include ../box/model-box
+
+    | {{range $productsList := .ProductsList.List}}
+    +model-box(require('../../../images/worx.jpg'), 'productsList')
+    | {{end}}
+
+  div.panel-footer
+    include ../pagination/pagination

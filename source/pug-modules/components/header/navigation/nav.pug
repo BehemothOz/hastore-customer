@@ -1,0 +1,10 @@
+mixin navigation
+  nav.navigation
+    ul.nav-list
+      li.nav-item #[a(href="").nav-link.no-active О компании]
+      li.nav-item #[a(href!=`{{ route "catalog" }}`).nav-link Каталог]
+      li.nav-item #[a(href="").nav-link.no-active Доставка и оплата]
+      li.nav-item #[a(href="").nav-link.no-active Контакты]
+      li.nav-item #[a(href="").nav-link.no-active Галерея]
+      li.nav-item #[a(href="").nav-link.no-active Блог]
+      li.nav-item #[a(href="").nav-link.no-active Отзывы]

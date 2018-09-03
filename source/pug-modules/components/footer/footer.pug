@@ -1,0 +1,38 @@
+footer.footer
+  div.container
+    //- top
+    div.footer-top
+      div.footer-logo-copyright
+        div.footer-logo
+          a(href="index.html")
+            img(src=require('../../../images/logo-white.svg') alt="logo.svg").logo
+        div.copyright
+          span.info.info-copyright © Hastore.ru 2014 - 2017 #[br]Все права защищены
+
+      ul.contacts-list
+        li.contact
+          span.contact-title +7 916 985-56-27
+          span.contact-desc Ежедневно #[br]с 10:00 до 20:00 по МСК
+        li.contact
+          span.contact-title E-mail
+          span.contact-desc mail@hastore.ru
+        li.contact
+          span.contact-title Наш адрес
+          span.contact-desc г. Балашиха, Ласточкин проезд, владение 6
+
+      div.social-network
+        div.title Мы в соцсетях
+        include ../social/social
+
+      ul.footer-nav
+        li.nav-item #[a(href="").nav-link.no-active О нас]
+        li.nav-item #[a(href="catalog.html").nav-link Каталог]
+        li.nav-item #[a(href="").nav-link.no-active Доставка и оплата]
+        li.nav-item #[a(href="").nav-link.no-active Контакты]
+        li.nav-item #[a(href="").nav-link.no-active Галерея]
+        li.nav-item #[a(href="").nav-link.no-active Блог]
+        li.nav-item #[a(href="").nav-link.no-active Отзывы]
+
+    div.footer-bottom
+      p.info.info-offer Данный интернет-сайт носит исключительно информационный характер и ни при #[br] каких условиях не является публичной офертой.
+      p.info.info-copying Любое копирование #[br]материалов сайта запрещено.

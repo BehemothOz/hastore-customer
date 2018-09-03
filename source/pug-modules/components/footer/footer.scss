@@ -1,0 +1,106 @@
+.footer {
+  $green:  #458748;
+  $footerBg: #0e1824;
+
+  padding: 30px 0;
+  background-color: $footerBg;
+
+  .info {
+    font-size: 12px;
+    line-height: 1.2;
+    color: rgba($white, 0.4);
+  }
+
+  .footer-top {
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(#979797, 0.27);
+    @include cf();
+
+    .footer-logo-copyright {
+      float: left;
+      width: 155px;
+
+      .footer-logo {
+        position: relative;
+        top: -11px;
+        margin-bottom: 158px;
+
+        .logo {
+          max-width: 100%;
+        }
+      }
+    }
+
+    .contacts-list {
+      float: left;
+      width: 235px;
+      margin-left: 105px;
+      padding-right: 60px;
+
+      .contact {
+        margin-bottom: 30px;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        .contact-title {
+          display: block;
+          margin-bottom: 5px;
+          font-size: 20px;
+          color: $white;
+        }
+
+        .contact-desc {
+          display: block;
+          font-size: 15px;
+          color: $green;
+        }
+      }
+    }
+
+    .social-network {
+      float: left;
+      width: 135px;
+
+      .title {
+        margin-bottom: 8px;
+        font-size: 20px;
+        color: $white;
+      }
+
+      .social-item {
+        margin-bottom: 7px;
+      }
+    }
+
+    .footer-nav {
+      float: left;
+      padding-left: 85px;
+
+      .nav-item {
+        margin-bottom: 10px;
+        color: $white;
+
+        .nav-link {
+          font-size: 17px;
+          line-height: 25px;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    padding-top: 25px;
+    @include cf();
+
+    .info-offer {
+      float: left;
+    }
+
+    .info-copying {
+      float: right;
+      text-align: right;
+    }
+  }
+}

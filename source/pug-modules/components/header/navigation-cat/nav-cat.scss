@@ -1,0 +1,58 @@
+.navigation-cat {
+  float: left;
+  opacity: 1;
+  transition: opacity 0.2s ease 0.7s;
+
+  &.hidden {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .nav-list {
+    @include cf();
+
+    .nav-item {
+      float: left;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 27px 20px;
+      font-size: 17px;
+      line-height: 16px;
+
+      &:hover {
+        background-color: $black-20;
+      }
+    }
+  }
+
+  &.theme-white {
+    .nav-link {
+      position: relative;
+
+       &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+      }
+    }
+
+    .nav-link:hover {
+      background-color: inherit;
+
+      &::after {
+        background-color: rgba($red, 0.36);
+      }
+    }
+  }
+
+  &.theme-black {
+    .nav-link:hover {
+      background-color: $black-20
+    }
+  }
+}

@@ -1,0 +1,155 @@
+.card-page {
+  $white: #fff;
+  $black: #0e1824;
+  $green: #346c36;
+
+  .card {
+    padding-top: 45px;
+    background-color: $white;
+  }
+
+  .card-container {
+    margin-bottom: 65px;
+
+      &::after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+  }
+
+  .card-title {
+    margin-bottom: 35px;
+
+    .title {
+      margin-bottom: 2px;
+    }
+
+    .code-number {
+      font-size: 13px;
+      color: #808080;
+    }
+  }
+
+  .card-gallery {
+    float: left;
+    width: 630px;
+    min-height: 50px;
+    background-color: pink;
+  }
+
+  .card-tabs {
+    width: 100%;
+  }
+
+  .card-info {
+    float: left;
+    width: 610px;
+    margin-left: 40px;
+    background-color: $white;
+    box-shadow: 0 2px 11px 0 rgba(0, 0, 0, 0.5);
+
+    .price-buy {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 40px;
+      background-color: #0e1824;
+      border-radius: 4px 4px 0 0;
+
+      .price {
+        height: 35px;
+        font-size: 20px;
+        color: $white;
+
+        span {
+          margin-left: 5px;
+          font-size: 38px;
+          line-height: 38px;
+        }
+
+        .rub {
+          margin-right: 10px;
+          font-size: 36px;
+          line-height: 36px;
+        }
+      }
+
+      .btn-buy {
+        width: 200px;
+      }
+    }
+
+    .stock-delivery {
+      display: flex;
+      padding: 20px 40px;
+      font-size: 14px;
+      background-color: #e6e6e6;
+
+      .stock {
+        position: relative;
+        color: $green;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: -12px;
+          display: block;
+          width: 1px;
+          height: 20px;
+          margin-top: -10px;
+          background-color: $green;
+        }
+      }
+
+      .delivery {
+        margin-left: 25px;
+        color: $black;
+      }
+    }
+
+    .review-short-desc {
+      padding: 20px 40px 30px;
+
+      &::after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+
+      .title {
+        margin-bottom: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        color: $black;
+        text-transform: uppercase;
+      }
+
+      .display-review,
+      .display-desc {
+        font-size: 15px;
+        line-height: 1.47;
+        color: #808080;
+      }
+
+      .review {
+        float: left;
+        width: 245px;
+
+        .display-review {
+          height: 200px;
+          padding: 15px;
+          border: solid 1px #979797;
+          overflow: hidden;
+        }
+      }
+
+      .short-desc {
+        float: left;
+        width: calc(100% - 245px - 40px);
+        margin-left: 40px;
+      }
+    }
+  }
+}

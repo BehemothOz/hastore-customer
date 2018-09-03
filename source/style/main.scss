@@ -1,0 +1,29 @@
+
+// global
+@import './global/variables.scss';
+@import './global/mixins.scss';
+@import './global/normalize.scss';
+@import './global/fonts.scss';
+@import './global/headings.scss';
+@import './global/global.scss';
+@import './global/grid.scss';
+
+// components
+@import './components/buttons.scss';
+// @import './components/panel.scss';
+// @import './components/select.scss';
+
+// modules
+@import '../pug-modules/components/header/header.scss';
+@import '../pug-modules/components/footer/footer.scss';
+@import '../pug-modules/components/box/model-box.scss';
+@import '../pug-modules/components/social/social.scss';
+@import '../pug-modules/components/panels/panel.scss';
+
+@import '../pug-modules/components/form/select/select.scss';
+@import '../pug-modules/components/form/checkbox/checkbox.scss';
+
+@import '../pug-modules/components/tabs/tabs.scss';
+@import '../pug-modules/components/popup/popup.scss';
+
+@import '../pug-modules/components/pagination/pagination.scss';

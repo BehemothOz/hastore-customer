@@ -1,0 +1,14 @@
+template#model-box
+  div.model-box
+    div.visible-box
+      img(src=require('../../../images/worx.jpg')).image
+      div.name
+      div.price от #[span.price-count] #[span.rub ₽] за 1 шт
+
+    div.hidden-box
+      div.color-title цвета
+          ul.color-list
+            li.color #[a(href="") ]
+            li.color #[a(href="") ]
+
+      a(href="" role="button").btn.btn-block.btn-green.btn-round.btn-box Перейти к товару

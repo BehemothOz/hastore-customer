@@ -1,0 +1,72 @@
+$socialBg: rgba(#525a62, 0.38);
+
+$vkBg: #4e709b;
+$fbBg: #375b99;
+$instBg: #db3c88;
+$odnBg: #ec8732;
+$ddBg: #db3c46;
+
+.social-list {
+  @include cf();
+
+  .social-item {
+    float: left;
+    width: 39px;
+    height: 39px;
+    margin-right: 6px;
+    background-color: $socialBg;
+    background-repeat: no-repeat;
+    // background-size: contain;
+    background-position: center;
+    border-radius: 100%;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &.vk {
+      background-image: url('../images/social-icon/vk.svg');
+
+      &:hover,
+      &:active {
+        background-color: $vkBg;
+      }
+    }
+
+    &.fb {
+      background-image: url('../images/social-icon/facebook.svg');
+
+      &:hover,
+      &:active {
+        background-color: $fbBg;
+      }
+    }
+
+    &.inst {
+      background-image: url('../images/social-icon/instagram.svg');
+
+      &:hover,
+      &:active {
+        background-color: $instBg;
+      }
+    }
+
+    &.odn {
+      background-image: url('../images/social-icon/odnoklassniki.svg');
+
+      &:hover,
+      &:active {
+        background-color: $odnBg;
+      }
+    }
+
+    &.dd {
+      background-image: url('../images/social-icon/dd.svg');
+
+      &:hover,
+      &:active {
+        background-color: $ddBg;
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.panel.panel-catalog-filter {
+  padding: 30px 40px;
+
+  .line-custom-selects {
+    display: flex;
+    align-items: center;
+
+    .width {
+      width: 130px;
+    }
+
+    .diameter {
+      width: 130px;
+      margin-left: 54px;
+    }
+
+    .radius {
+      width: 130px;
+    }
+
+    .dia {
+      width: 131px;
+    }
+  }
+
+  .line-diff-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+
+    .diff-width-link {
+      font-size: 15px;
+      color: #346c36;
+      text-decoration: underline;
+    }
+  }
+
+  .line-custom-checkbox {
+    padding-top: 20px;
+    border-top: 1px solid  #e6e6e6;
+
+    .title {
+      margin-bottom: 20px;
+      font-size: 17px;
+      color: #0e1824;
+    }
+
+    .label-checkbox {
+      margin-right: 35px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}

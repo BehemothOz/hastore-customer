@@ -1,0 +1,29 @@
+.panel.panel-brands {
+  padding: 0 40px;
+
+  .panel-body {
+    padding: 23px 0 30px;
+  }
+
+  .title {
+    margin-bottom: 15px;
+    font-size: 17px;
+    color: #0e1824;
+  }
+
+  .brands-list {
+    .brand {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 50px;
+      font-size: 15px;
+      color: #346c36;
+      text-decoration: underline;
+      cursor: pointer;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.container-lg {
+  position: relative;
+  width: 1300px;
+  margin: 0 auto;
+  padding: 0 10px;
+  @include cf();
+}
+
+.container {
+  width: 920px;
+  margin: 0 auto;
+  @include cf();
+}

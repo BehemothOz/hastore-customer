@@ -1,0 +1,58 @@
+@import "./tab-description/tab-desc.scss";
+@import "./tab-modification/tab-mod.scss";
+
+.tab-container {
+  $white: #fff;
+  $black: #0e1824;
+  $activeBgTab: #f3f3f3;
+
+  background-color: $activeBgTab;
+
+  .tabs {
+    position: relative;
+    background-color: $white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.28);
+
+    .tab-wrapper {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .tab {
+      display: block;
+      padding: 20px 25px;
+      font-size: 25px;
+      color: $black;
+      border: none;
+      outline: none;
+      background-color: inherit;
+
+      &.active {
+        position: relative;
+        background-color: $activeBgTab;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.28) inset;
+
+        &::after {
+          content: '';
+          position: absolute;
+          display: block;
+          bottom: -5px;
+          left: 1px;
+          right: 1px;
+          height: 10px;
+          background-color: $activeBgTab;
+          border-radius: 8px 8px 0 0;
+        }
+      }
+    }
+  }
+
+  .tabs-content {
+    padding: 38px 0 60px;
+
+    .tab-content {
+      display: none;
+    }
+  }
+}

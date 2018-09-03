@@ -1,0 +1,33 @@
+mixin row-mod(mod)
+  - mod = mod
+  div.row.row-mod
+    div.cell.cell-width {{ $#{mod}.J }}
+    div.cell.cell-diameter {{ $#{mod}.D }}
+    div.cell.cell-radius {{ $#{mod}.ET }}
+    div.cell.cell-holes {{ $#{mod}.HolesN }}
+    div.cell.cell-pcd {{ $#{mod}.PCD }}
+    div.cell.cell-dia {{ $#{mod}.DIA }}
+    div.cell.cell-art(title!=`{{ $`+ mod +`.Code }}`) {{ $#{mod}.Code }}
+    div.cell.cell-color(title!=`{{ $`+ mod +`.Color }}`) {{ $#{mod}.Color }}
+    div.cell.cell-price(title!=`{{ $`+ mod +`.Price }}`) {{ $#{mod}.Price }} руб
+    div.cell.cell-prices {{ $#{mod}.Price }} руб
+    div.cell.cell-order
+      button.btn-order Заказать
+
+div.table-modification
+  div.row.row-head
+    div.cell.cell-width Ширина, мм
+    div.cell.cell-diameter Диаметр, "
+    div.cell.cell-radius Вылет, мм
+    div.cell.cell-holes Кол-во отверстий
+    div.cell.cell-pcd Диаметр распо-#[br]ложения (PCD)
+    div.cell.cell-dia Ступица (DIA)
+    div.cell.cell-art Артикул
+    div.cell.cell-color Цвет
+    div.cell.cell-price Цена (1 шт)
+    div.cell.cell-prices Цена (4 шт)
+    div.cell.cell-order
+
+  | {{ range $mods := .Product.GetMods }}
+  +row-mod('mods')
+  | {{end}}

@@ -1,0 +1,42 @@
+extends ../../base/base
+
+block variables
+  - title = 'Главная';
+  - classBody = 'main-page';
+  - headerTheme = 'black';
+
+block header
+  include ../../components/header/header
+  if headerTheme === 'black'
+    +header('black', require('../../../images/logo-white.svg'))
+  else
+    +header('white', require('../../../images/logo-dark.svg'))
+
+  div.main-search
+    div.container
+      div.main-heading
+        h1.main-title Литые диски
+        h2.main-title-sub для внедорожников
+
+      include ../../components/panels/panel-search/panel-search
+
+      div.search-api
+        span.api-desc Не знаете размер своих дисков? #[a(href="").api-link Наш сервис поможет узнать размер дисков по марке автомобиля]
+
+block content
+  div.main-page-content
+    div.container
+
+      h1 Hello World!
+      p zxczxczxc zxczxc zxczx czx czxczescz
+
+      include ../../components/panels/panel-brands/panel-brands
+      include ../../components/panels/panel-models-top
+      include ../../components/panels/panel-models-car
+
+      section.social-network
+        h2.h2.title Подписывайтесь на нас в социальных сетях!
+        include ../../components/social/social
+
+      include ../../components/panels/panel-gallery/panel-gallery
+      include ../../components/panels/panel-review/panel-review

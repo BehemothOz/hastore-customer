@@ -1,0 +1,90 @@
+$white: #fff;
+$green: #458748;
+$greenHover: #2a562b;
+$lightgreen: #21b027;
+
+$arrowText: #346c36;
+$arrowHover: #aaf6ad;
+$arrowBorderColor: #dde1e6;
+
+.btn {
+  width: 147px;
+  height: 40px;
+  font-size: 16px;
+  // line-height: 40px;
+  color: inherit;
+  border: none;
+  border-radius: 4px;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.btn-green {
+  color: $white;
+  background-color: $green;
+
+  &:hover,
+  &:active {
+    background-color: $greenHover;
+  }
+}
+
+.btn-lightgreen {
+  background-color: $lightgreen;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    background-color: $green;
+  }
+}
+
+.btn-transparent {
+  background-color: transparent;
+}
+
+.btn-round {
+  border-radius: 100px;
+}
+
+.btn-arrow {
+  position: relative;
+  height: 28px;
+  padding: 0 30px 0 15px;
+  font-size: 10px;
+  line-height: 28px;
+  color: $arrowText;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: solid 1px $arrowBorderColor;
+
+  &:hover {
+    background-color: $arrowHover;
+    border-color: $arrowHover;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-top: -8px;
+    border-radius: 100%;
+    background-color: $green;
+  }
+
+  &::after {
+    content: '\00276F';
+    position: absolute;
+    top: -1px;
+    right: 14px;
+    font-size: 8px;
+    color: $white;
+  }
+}

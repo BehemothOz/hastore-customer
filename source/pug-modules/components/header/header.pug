@@ -1,0 +1,33 @@
+include navigation/nav
+include navigation-cat/nav-cat
+
+mixin header(theme, src)
+  header.header
+    //- top
+    div.header-top
+      div.container-lg
+        +navigation
+        div.header-phone
+          a(href="tel:+79169855627").phone +7 916 985-56-27
+
+    //- bottom
+    div(class="header-bottom " + theme)
+      div.container-lg
+        div.header-logo
+          //- a(href!=`{{ route "card" id"3" }}`)
+          a(href!=`{{ route "home" }}`)
+            if theme === 'black'
+              img(src=src).logo
+            else
+              img(src=src).logo
+
+        if theme === 'black'
+          +navigation-cat('theme-black')
+        else
+          +navigation-cat('theme-white')
+
+        div.header-search
+          div.input-search-wrap
+            input(type="text" placeholder="Поиск").input-search
+          span.close-search
+

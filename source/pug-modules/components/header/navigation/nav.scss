@@ -1,0 +1,23 @@
+.navigation {
+  float: left;
+
+  .nav-list {
+    padding-left: 200px;
+    @include cf();
+
+    .nav-item {
+      float: left;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 10px 20px;
+      font-size: 14px;
+      line-height: 20px;
+
+      &:hover {
+        background-color: $gray-a07;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+extends ../../base/base
+
+block variables
+  - title = 'Карточка товара';
+  - classBody = 'card-page';
+  - headerTheme = 'white';
+
+block header
+  include ../../components/header/header
+  if headerTheme === 'black'
+    +header('black', require('../../../images/logo-white.svg'))
+  else
+    +header('white', require('../../../images/logo-dark.svg'))
+
+block content
+
+  <pre>
+  | {{ dbg .Product }}
+  </pre>
+  
+  //- <pre>
+  //- | {{ dbg .Product.GetMods }}
+  //- </pre>
+
+  section.card
+    div.container-lg
+      div.card-title
+        div.h1.title {{ .Product.Name }}
+        div.code-number Артикул: #[span.code {{ .Product.Code }}]
+
+      div.card-container
+        div.card-gallery
+
+        div.card-info
+          div.price-buy
+            div.price от #[span {{ money .Product.GetMeta.MinPrice 0 }}] #[span.rub ₽] за 1 шт.
+            button.btn.btn-green.btn-round.btn-buy Заказать в 1 клик
+
+          div.stock-delivery
+            div.stock Есть в наличии
+            div.delivery Доставим в течении 2х дней
+
+          div.review-short-desc
+            div.review
+              div.title Отзывы
+              div.display-review
+                | Тут отзыв. Откуда он берется? Тут только один отзыв? Блок, в котором он находится - фиксированный?
+                | Фиксированный по высоте? Рейтинг к чему? Сами диски, вроде, хорошие.
+
+            div.short-desc
+              div.title Коротко о товаре
+              div.display-desc
+                | Тут коротко о товаре. Более менее понятно. А что происходит, когда нажимается кнопка
+                | "показать полностью"? Появляется колбаса текста? Ну а диски.. хорошие!
+
+    div.card-tabs
+      include ../../components/tabs/tabs
+
+  include ../../components/popup/popup
+  +popup('Product')
+

@@ -1,0 +1,23 @@
+mixin navigation-cat(themeClass)
+  nav(class="navigation-cat " + themeClass)
+    ul.nav-list
+      //- | {{ range .Categories }}
+      //- |   {{ if eq .ID 1 }}
+      //- li.nav-item #[a(href!=`{{ .ID }}`).nav-link {{ .Name }}]
+      //- |   {{ else }}
+      //- li.nav-item #[a(href!=`{{ .ID }}`).nav-link.no-active {{ .Name }}]
+      //- |   {{ end }}
+      //- |  {{ end }}
+
+      //- |  {{ if eq .ID 1 }}
+      //- |   {{ $class := ".no-active" }}
+      //- |  {{ end }}
+      //- li.nav-item #[a(href!=`{{ .ID }}` class!=`{{ $class}}`).nav-link {{ .Name }}]
+      //- | {{ end }}
+      //- li {{ .Categories }}
+      li.nav-item #[a(href="").nav-link Диски для внедорожников]
+      li.nav-item #[a(href="").nav-link.no-active Диски для легковых]
+      li.nav-item #[a(href="").nav-link.no-active Комплектующие]
+      li.nav-item #[a(href="").nav-link.no-active Свет]
+      li.nav-item #[a(href="").nav-link.no-active Тюнинг]
+      li.nav-item #[a(href="").nav-link.no-active Шины]

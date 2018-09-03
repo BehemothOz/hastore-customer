@@ -1,0 +1,33 @@
+{
+  "name": "hastore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build.js",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.5",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "file-loader": "^1.1.5",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.5.3",
+    "node-static": "^0.7.10",
+    "postcss-loader": "^2.0.7",
+    "pug": "^2.0.0-rc.4",
+    "pug-loader": "^2.3.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.9.1",
+    "webpack-merge": "^4.1.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --env development",
+    "build": "webpack --env production",
+    "serv": "static build"
+  },
+  "author": "",
+  "license": "ISC"
+}

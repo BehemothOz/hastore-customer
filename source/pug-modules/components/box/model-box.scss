@@ -1,0 +1,113 @@
+$textColor: #000;
+$priceColor: #0e1824;
+$hiddenColor: #0e1824;
+
+
+.model-box {
+  position: relative;
+  float: left;
+  width: 220px;
+  // padding: 15px 20px;
+  // background-color: lightblue;
+
+  &:hover {
+    .visible-box {
+      box-shadow: 0 2px 11px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    .hidden-box{
+      visibility: visible;
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  .image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .name {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: $textColor;
+  }
+
+  .price {
+    font-size: 14px;
+
+    .price-count {
+      margin-left: 4px;
+      font-size: 23px;
+      color: $priceColor;
+    }
+
+    .rub {
+      margin-right: 4px;
+      font-size: 21px;
+      color: $priceColor;
+    }
+  }
+
+  .color-title {
+    font-size: 12px;
+    line-height: 22px;
+    color:$hiddenColor;
+  }
+
+  .color-list {
+    margin-bottom: 15px;
+
+    .color {
+      color: $hiddenColor;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      a {
+        font-size: 14px;
+        line-height: 1.64;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .btn-box {
+    height: 37px;
+    line-height: 37px;
+  }
+
+  .visible-box {
+    position: relative;
+    padding: 15px 20px;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .hidden-box {
+    position: absolute;
+    top: 274px;
+    left: 0;
+    width: 100%;
+    padding: 0 20px 15px;
+    background-color: $white;
+    box-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 4px 4px;
+    z-index: 100;
+
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 0;
+      right: 0;
+      height: 10px;
+      background-color: $white;
+      z-index: 150;
+    }
+  }
+}

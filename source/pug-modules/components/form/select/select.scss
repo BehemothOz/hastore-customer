@@ -1,0 +1,78 @@
+.custom-select {
+  $white: #fff;
+  $green: #aaf6ad;
+  $green-dark: #458748;
+  $colorSelectText: #0e1824;
+  $fontSelected: 22px;
+  $fontOption: 16px;
+
+  position: relative;
+
+  .custom-select-field {
+    position: relative;
+    height: 32px;
+    padding: 0 30px 0 5px;
+    font-size: $fontSelected;
+    line-height: 32px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: $white;
+
+    &.active {
+      &::after {
+        margin-top: -3px;
+        transform: rotate(225deg);
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 13px;
+      display: block;
+      width: 6px;
+      height: 6px;
+      margin-top: -6px;
+      border-right: 1px solid #000;
+      border-bottom: 1px solid #000;
+      transform: rotate(45deg);
+    }
+
+    &:hover {
+      border-color: $green;
+    }
+  }
+
+  .custom-select-options {
+    display: none;
+
+    position: absolute;
+    top: 35px;
+    left: 0;
+
+    min-width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+
+    background-color: $white;
+    outline: 1px solid #d4d4d4;
+    box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.2);
+    z-index: 200;
+
+    &.show {
+      display: block;
+    }
+
+    .custom-select-option {
+      padding: 6px 40px;
+      font-size: $fontOption;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $green;
+      }
+    }
+  }
+}

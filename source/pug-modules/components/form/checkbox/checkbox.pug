@@ -1,0 +1,5 @@
+mixin custom-checkbox(name, value, desc)
+  label.label-checkbox
+    input(type="checkbox" name=name value!=value).custom-checkbox
+    span.checkbox-fake
+    span.checkbox-name= desc

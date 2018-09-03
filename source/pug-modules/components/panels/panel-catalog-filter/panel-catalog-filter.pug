@@ -1,0 +1,41 @@
+
+section.panel.panel-form.panel-catalog-filter
+  form.form-filter
+    include ../../form/select/select
+    include ../../form/checkbox/checkbox
+
+    div.line-custom-selects
+      div.select-block.width
+        div.title Ширина, мм
+        +select-custom('', 'J')
+
+      div.select-block.diameter
+        div.title Диаметр, "
+        +select-custom('', 'D')
+
+      div.select-block.radius
+        div.title Вылет, мм
+        +select-custom('', 'ET')
+
+      div.select-block.pcd
+        div.title Сверловка (PCD)
+        +select-custom('', 'HolesN')
+        +select-custom('', 'HolesN')
+
+      div.select-block.dia
+        div.title Ступица (DIA)
+        +select-custom('', 'DIA')
+
+    div.line-diff-width
+      +custom-checkbox('diff-width', 'true', 'Разноширокие комплекты')
+      a(href="").diff-width-link Узнать размер дисков по марке автомобиля
+
+    div.line-custom-checkbox
+      div.title Подбор по производителю дисков
+
+      +custom-checkbox('brand', 'black-rhino', 'Black Rhino')
+      +custom-checkbox('brand', 'pro-comp', 'Pro Comp')
+      +custom-checkbox('brand', 'worx', 'Worx')
+      +custom-checkbox('brand', 'fuel', 'Fuel')
+      +custom-checkbox('brand', 'kmc', 'KMC')
+      +custom-checkbox('brand', 'tuff', 'Tuff')

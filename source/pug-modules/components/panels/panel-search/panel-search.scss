@@ -1,0 +1,30 @@
+.panel.panel-main-search {
+  display: flex;
+  align-items: center;
+  padding: 23px 20px;
+
+  .width {
+    width: 91px;
+  }
+
+  .diameter {
+    width: 88px;
+    margin-left: 51px;
+  }
+
+  .radius {
+    width: 104px;
+  }
+
+  .dia {
+    width: 92px;
+  }
+
+  .btn-search {
+    width: 173px;
+    height: 32px;
+    margin-top: auto;
+    margin-left: 16px;
+    line-height: 32px;
+  }
+}

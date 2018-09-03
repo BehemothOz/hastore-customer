@@ -1,0 +1,24 @@
+extends ../../base/base
+
+block variables
+  - title = 'Каталог';
+  - classBody = 'catalog-page';
+  - headerTheme = 'white';
+
+block header
+  include ../../components/header/header
+  if headerTheme === 'black'
+    +header('black', require('../../../images/logo-white.svg'))
+  else
+    +header('white', require('../../../images/logo-dark.svg'))
+
+block content
+  div.catalog-page-content
+    div.container
+      h1 Hello World and Catalog!
+
+      include ../../components/panels/panel-catalog-filter/panel-catalog-filter
+      include ../../components/panels/panel-catalog
+
+      include ../../components/box/model-box-template
+

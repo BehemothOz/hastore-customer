@@ -1,0 +1,19 @@
+mixin popup(data)
+  div.popup-overlay
+    div.popup.popup-order
+      i.icon-close
+      div.order-info
+        h2.h1.title {{ .#{data}.Name }}
+        div.price от #[span {{ money .#{data}.GetMeta.MinPrice 0 }}] #[span.rub ₽] за 1 шт.
+
+      div.order-form
+        div.order-line
+          span.name Имя
+          input(type="text").order-input
+        div.order-line
+          span.name Мобильный телефон
+          input(type="text").order-input
+
+      div.order-action
+        button.btn.btn-lightgreen.btn-round.btn-order Заказать
+        button.btn.btn-transparent.btn-cancel-order Отменить заказ

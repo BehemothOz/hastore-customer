@@ -1,0 +1,17 @@
+div.tab-container
+  div.tabs
+    div.tab-wrapper.container-lg
+      button.tab.defaultOpen(data-index='0') Размеры и модификации
+      button.tab(data-index='1') О товаре
+      button.tab(data-index='2') Доставка и оплата
+      button.tab(data-index='3') Все отзывы (число)
+
+  div.tabs-content
+    div.tab-content.container-lg
+      include ./tab-modification/tab-mod
+    div.tab-content.tab-content-desc.container
+      include ./tab-description/tab-desc
+    div.tab-content.container
+      h3 Доставка и оплата
+    div.tab-content.container
+      h3 Все отзывы (число)

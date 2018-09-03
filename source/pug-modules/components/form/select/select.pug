@@ -1,0 +1,9 @@
+mixin select-custom(placeholder, goName)
+  div.custom-select
+    div.custom-select-field(data-name=goName.toLowerCase())= placeholder
+    input(type="hidden" name=goName.toLowerCase()).custom-input
+    ul.custom-select-options
+      li.custom-select-option(data-value="init") Любая
+      | {{ range .Filters.#{goName} }}
+      li.custom-select-option {{ . }}
+      | {{ end }}

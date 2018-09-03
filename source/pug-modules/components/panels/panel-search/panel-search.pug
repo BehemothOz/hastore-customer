@@ -1,0 +1,27 @@
+//- 
+form.form-search(action="/catalog" method="get")
+  section.panel.panel-form.panel-main-search
+    include ../../form/select/select
+
+    div.select-block.width
+      div.title Ширина, мм
+      +select-custom('', 'J')
+
+    div.select-block.diameter
+      div.title Диаметр, "
+      +select-custom('', 'D')
+
+    div.select-block.radius
+      div.title Вылет, мм
+      +select-custom('', 'ET')
+
+    div.select-block.pcd
+      div.title Сверловка (PCD)
+      +select-custom('', 'HolesN')
+      +select-custom('', 'HolesN')
+
+    div.select-block.dia
+      div.title Ступица (DIA)
+      +select-custom('', 'DIA')
+
+    button.btn.btn-green.btn-search Найти

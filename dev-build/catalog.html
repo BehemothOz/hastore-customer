@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Каталог | Hastore - Литые диски для внедорожников</title>
+  <link href="/css/common.css" rel="stylesheet"><link href="/css/catalog.css" rel="stylesheet"></head>
+  <body class="catalog-page">
+        <header class="header">
+          <div class="header-top">
+            <div class="container-lg">
+                  <nav class="navigation">
+                    <ul class="nav-list">
+                      <li class="nav-item"><a class="nav-link no-active" href="">О компании</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{{ route "catalog" }}">Каталог</a></li>
+                      <li class="nav-item"><a class="nav-link no-active" href="">Доставка и оплата</a></li>
+                      <li class="nav-item"><a class="nav-link no-active" href="">Контакты</a></li>
+                      <li class="nav-item"><a class="nav-link no-active" href="">Галерея</a></li>
+                      <li class="nav-item"><a class="nav-link no-active" href="">Блог</a></li>
+                      <li class="nav-item"><a class="nav-link no-active" href="">Отзывы</a></li>
+                    </ul>
+                  </nav>
+              <div class="header-phone"><a class="phone" href="tel:+79169855627">+7 916 985-56-27</a></div>
+            </div>
+          </div>
+          <div class="header-bottom white">
+            <div class="container-lg">
+              <div class="header-logo"><a href="{{ route "home" }}"><img class="logo" src="/images/logo-dark.svg"></a></div>
+                  <nav class="navigation-cat theme-white">
+                    <ul class="nav-list">
+                      <li class="nav-item"><a class="nav-link" href="">Диски для внедорожников</a></li>
+                      <li class="nav-item"><a class="nav-link no-active" href="">Диски для легковых</a></li>
+                      <li class="nav-item"><a class="nav-link no-active" href="">Комплектующие</a></li>
+                      <li class="nav-item"><a class="nav-link no-active" href="">Свет</a></li>
+                      <li class="nav-item"><a class="nav-link no-active" href="">Тюнинг</a></li>
+                      <li class="nav-item"><a class="nav-link no-active" href="">Шины</a></li>
+                    </ul>
+                  </nav>
+              <div class="header-search">
+                <div class="input-search-wrap">
+                  <input class="input-search" type="text" placeholder="Поиск">
+                </div><span class="close-search"></span>
+              </div>
+            </div>
+          </div>
+        </header>
+    <div class="catalog-page-content">
+      <div class="container">
+        <h1>Hello World and Catalog!</h1>
+        <section class="panel panel-form panel-catalog-filter">
+          <form class="form-filter">
+            <div class="line-custom-selects">
+              <div class="select-block width">
+                <div class="title">Ширина, мм</div>
+                            <div class="custom-select">
+                              <div class="custom-select-field" data-name="j"></div>
+                              <input class="custom-input" type="hidden" name="j">
+                              <ul class="custom-select-options">
+                                <li class="custom-select-option" data-value="init">Любая</li>{{ range .Filters.J }}
+                                <li class="custom-select-option">{{ . }}</li>{{ end }}
+                              </ul>
+                            </div>
+              </div>
+              <div class="select-block diameter">
+                <div class="title">Диаметр, "</div>
+                            <div class="custom-select">
+                              <div class="custom-select-field" data-name="d"></div>
+                              <input class="custom-input" type="hidden" name="d">
+                              <ul class="custom-select-options">
+                                <li class="custom-select-option" data-value="init">Любая</li>{{ range .Filters.D }}
+                                <li class="custom-select-option">{{ . }}</li>{{ end }}
+                              </ul>
+                            </div>
+              </div>
+              <div class="select-block radius">
+                <div class="title">Вылет, мм</div>
+                            <div class="custom-select">
+                              <div class="custom-select-field" data-name="et"></div>
+                              <input class="custom-input" type="hidden" name="et">
+                              <ul class="custom-select-options">
+                                <li class="custom-select-option" data-value="init">Любая</li>{{ range .Filters.ET }}
+                                <li class="custom-select-option">{{ . }}</li>{{ end }}
+                              </ul>
+                            </div>
+              </div>
+              <div class="select-block pcd">
+                <div class="title">Сверловка (PCD)</div>
+                            <div class="custom-select">
+                              <div class="custom-select-field" data-name="holesn"></div>
+                              <input class="custom-input" type="hidden" name="holesn">
+                              <ul class="custom-select-options">
+                                <li class="custom-select-option" data-value="init">Любая</li>{{ range .Filters.HolesN }}
+                                <li class="custom-select-option">{{ . }}</li>{{ end }}
+                              </ul>
+                            </div>
+                            <div class="custom-select">
+                              <div class="custom-select-field" data-name="holesn"></div>
+                              <input class="custom-input" type="hidden" name="holesn">
+                              <ul class="custom-select-options">
+                                <li class="custom-select-option" data-value="init">Любая</li>{{ range .Filters.HolesN }}
+                                <li class="custom-select-option">{{ . }}</li>{{ end }}
+                              </ul>
+                            </div>
+              </div>
+              <div class="select-block dia">
+                <div class="title">Ступица (DIA)</div>
+                            <div class="custom-select">
+                              <div class="custom-select-field" data-name="dia"></div>
+                              <input class="custom-input" type="hidden" name="dia">
+                              <ul class="custom-select-options">
+                                <li class="custom-select-option" data-value="init">Любая</li>{{ range .Filters.DIA }}
+                                <li class="custom-select-option">{{ . }}</li>{{ end }}
+                              </ul>
+                            </div>
+              </div>
+            </div>
+            <div class="line-diff-width">
+                          <label class="label-checkbox">
+                            <input class="custom-checkbox" type="checkbox" name="diff-width" value="true"><span class="checkbox-fake"></span><span class="checkbox-name">Разноширокие комплекты</span>
+                          </label><a class="diff-width-link" href="">Узнать размер дисков по марке автомобиля</a>
+            </div>
+            <div class="line-custom-checkbox">
+              <div class="title">Подбор по производителю дисков</div>
+                          <label class="label-checkbox">
+                            <input class="custom-checkbox" type="checkbox" name="brand" value="black-rhino"><span class="checkbox-fake"></span><span class="checkbox-name">Black Rhino</span>
+                          </label>
+                          <label class="label-checkbox">
+                            <input class="custom-checkbox" type="checkbox" name="brand" value="pro-comp"><span class="checkbox-fake"></span><span class="checkbox-name">Pro Comp</span>
+                          </label>
+                          <label class="label-checkbox">
+                            <input class="custom-checkbox" type="checkbox" name="brand" value="worx"><span class="checkbox-fake"></span><span class="checkbox-name">Worx</span>
+                          </label>
+                          <label class="label-checkbox">
+                            <input class="custom-checkbox" type="checkbox" name="brand" value="fuel"><span class="checkbox-fake"></span><span class="checkbox-name">Fuel</span>
+                          </label>
+                          <label class="label-checkbox">
+                            <input class="custom-checkbox" type="checkbox" name="brand" value="kmc"><span class="checkbox-fake"></span><span class="checkbox-name">KMC</span>
+                          </label>
+                          <label class="label-checkbox">
+                            <input class="custom-checkbox" type="checkbox" name="brand" value="tuff"><span class="checkbox-fake"></span><span class="checkbox-name">Tuff</span>
+                          </label>
+            </div>
+          </form>
+        </section>
+        <section class="panel panel-catalog-list">
+          <div class="panel-body">{{range $productsList := .ProductsList.List}}
+                        <div class="model-box">
+                          <div class="visible-box"><img class="image" src="/images/worx.jpg">
+                            <div class="name">{{ $productsList.Name }}</div>
+                            <div class="price">от <span class="price-count">{{ money $productsList.GetMeta.MinPrice 0 }}</span> <span class="rub">₽</span> за 1 шт</div>
+                          </div>
+                          <div class="hidden-box">{{ $colors := $productsList.GetMods | $productsList.GetColors }}
+                            {{ if (len $colors | ne 0) }}
+                            <div class="color-title">цвета
+                              <ul class="color-list">
+                                <li class="color"><a href="">{{ len $colors }}</a></li>{{ range $colors }}
+                                <li class="color"><a href="">{{ . }}</a></li>{{ end }}
+                              </ul>
+                            </div>{{ end }}<a class="btn btn-block btn-green btn-round btn-box" href="{{ printf "%v" $productsList.ID | route "product" "id" }}" role="button">Перейти к товару</a>
+                          </div>
+                        </div>{{end}}
+          </div>
+          <div class="panel-footer">
+<div class="pagination">
+  <div class="pagination-pages"><span class="page active-page">1</span><span class="page">2</span><span class="dots">...</span><span class="page">3</span></div>
+  <div class="pagination-action">
+    <button class="btn btn-round btn-transparent btn-page btn-page-prev">Предыдущая</button>
+    <button class="btn btn-round btn-transparent btn-page btn-page-next">Следующая</button>
+  </div>
+</div>
+          </div>
+        </section>
+<template id="model-box">
+  <div class="model-box">
+    <div class="visible-box"><img class="image" src="/images/worx.jpg">
+      <div class="name"></div>
+      <div class="price">от <span class="price-count"></span> <span class="rub">₽</span> за 1 шт</div>
+    </div>
+    <div class="hidden-box">
+      <div class="color-title">цвета
+        <ul class="color-list">
+          <li class="color"><a href=""></a></li>
+          <li class="color"><a href=""></a></li>
+        </ul>
+      </div><a class="btn btn-block btn-green btn-round btn-box" href="" role="button">Перейти к товару</a>
+    </div>
+  </div>
+</template>
+      </div>
+    </div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-logo-copyright">
+        <div class="footer-logo"><a href="index.html"><img class="logo" src="/images/logo-white.svg" alt="logo.svg"></a></div>
+        <div class="copyright"><span class="info info-copyright">© Hastore.ru 2014 - 2017 <br>Все права защищены</span></div>
+      </div>
+      <ul class="contacts-list">
+        <li class="contact"><span class="contact-title">+7 916 985-56-27</span><span class="contact-desc">Ежедневно <br>с 10:00 до 20:00 по МСК</span></li>
+        <li class="contact"><span class="contact-title">E-mail</span><span class="contact-desc">mail@hastore.ru</span></li>
+        <li class="contact"><span class="contact-title">Наш адрес</span><span class="contact-desc">г. Балашиха, Ласточкин проезд, владение 6</span></li>
+      </ul>
+      <div class="social-network">
+        <div class="title">Мы в соцсетях</div>
+<div class="social-list"><a class="social-item vk" href=""></a><a class="social-item fb" href=""></a><a class="social-item inst" href=""></a><a class="social-item odn" href=""></a><a class="social-item dd" href=""></a></div>
+      </div>
+      <ul class="footer-nav">
+        <li class="nav-item"><a class="nav-link no-active" href="">О нас</a></li>
+        <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+        <li class="nav-item"><a class="nav-link no-active" href="">Доставка и оплата</a></li>
+        <li class="nav-item"><a class="nav-link no-active" href="">Контакты</a></li>
+        <li class="nav-item"><a class="nav-link no-active" href="">Галерея</a></li>
+        <li class="nav-item"><a class="nav-link no-active" href="">Блог</a></li>
+        <li class="nav-item"><a class="nav-link no-active" href="">Отзывы</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p class="info info-offer">Данный интернет-сайт носит исключительно информационный характер и ни при <br> каких условиях не является публичной офертой.</p>
+      <p class="info info-copying">Любое копирование <br>материалов сайта запрещено.</p>
+    </div>
+  </div>
+</footer>
+  <script type="text/javascript" src="/js/common.js"></script><script type="text/javascript" src="/js/catalog.js"></script></body>
+</html>
