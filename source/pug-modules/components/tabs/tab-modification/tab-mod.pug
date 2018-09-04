@@ -1,16 +1,15 @@
-mixin row-mod(mod)
-  - mod = mod
+mixin row-mod()
   div.row.row-mod
-    div.cell.cell-width {{ $#{mod}.J }}
-    div.cell.cell-diameter {{ $#{mod}.D }}
-    div.cell.cell-radius {{ $#{mod}.ET }}
-    div.cell.cell-holes {{ $#{mod}.HolesN }}
-    div.cell.cell-pcd {{ $#{mod}.PCD }}
-    div.cell.cell-dia {{ $#{mod}.DIA }}
-    div.cell.cell-art(title!=`{{ $`+ mod +`.Code }}`) {{ $#{mod}.Code }}
-    div.cell.cell-color(title!=`{{ $`+ mod +`.Color }}`) {{ $#{mod}.Color }}
-    div.cell.cell-price(title!=`{{ $`+ mod +`.Price }}`) {{ $#{mod}.Price }} руб
-    div.cell.cell-prices {{ $#{mod}.Price }} руб
+    div.cell.cell-width 11.75
+    div.cell.cell-diameter 132.5
+    div.cell.cell-radius 110.5
+    div.cell.cell-holes 5
+    div.cell.cell-pcd 127/155
+    div.cell.cell-dia 56.62
+    div.cell.cell-art(title="123456789") 123456789
+    div.cell.cell-color(title="Brushed Titanium") Brushed Titanium
+    div.cell.cell-price(title="14 000") 14 000 руб
+    div.cell.cell-prices 634 000 руб
     div.cell.cell-order
       button.btn-order Заказать
 
@@ -28,6 +27,6 @@ div.table-modification
     div.cell.cell-prices Цена (4 шт)
     div.cell.cell-order
 
-  | {{ range $mods := .Product.GetMods }}
-  +row-mod('mods')
-  | {{end}}
+  - for (var i = 0; i < 5; i++) {
+      +row-mod()
+  - }

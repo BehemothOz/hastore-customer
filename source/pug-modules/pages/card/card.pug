@@ -16,15 +16,17 @@ block content
   section.card
     div.container-lg
       div.card-title
-        div.h1.title {{ .Product.Name }}
-        div.code-number Артикул: #[span.code {{ .Product.Code }}]
+        div.h1.title KMC XD755 Rockstar
+        div.code-number Артикул: #[span.code 154299]
 
       div.card-container
         div.card-gallery
+          div.image-container
+            img(src=require('../../../images/worx.jpg')).image
 
         div.card-info
           div.price-buy
-            div.price от #[span {{ money .Product.GetMeta.MinPrice 0 }}] #[span.rub ₽] за 1 шт.
+            div.price от #[span 33 600] #[span.rub ₽] за 1 шт.
             button.btn.btn-green.btn-round.btn-buy Заказать в 1 клик
 
           div.stock-delivery
@@ -36,13 +38,13 @@ block content
               div.title Отзывы
               div.display-review
                 | Тут отзыв. Откуда он берется? Тут только один отзыв? Блок, в котором он находится - фиксированный?
-                | Фиксированный по высоте? Рейтинг к чему? Сами диски, вроде, хорошие.
+                | Фиксированный по высоте? Рейтинг к чему?
 
             div.short-desc
               div.title Коротко о товаре
               div.display-desc
                 | Тут коротко о товаре. Более менее понятно. А что происходит, когда нажимается кнопка
-                | "показать полностью"? Появляется колбаса текста? Ну а диски.. хорошие!
+                | "показать полностью"?
 
     div.card-tabs
       include ../../components/tabs/tabs

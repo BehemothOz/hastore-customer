@@ -11,11 +11,11 @@
   .card-container {
     margin-bottom: 65px;
 
-      &::after {
-        content: '';
-        display: table;
-        clear: both;
-      }
+    &::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
   }
 
   .card-title {
@@ -35,7 +35,15 @@
     float: left;
     width: 630px;
     min-height: 50px;
-    background-color: pink;
+    // background-color: pink;
+
+    .image-container {
+      width: 68%;
+    }
+
+    .image {
+      width: 100%;
+    }
   }
 
   .card-tabs {
