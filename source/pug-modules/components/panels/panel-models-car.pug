@@ -1,10 +1,18 @@
+-
+  var data = {
+    name: 'TBL XS47 SpaceX',
+    minPrice: '19 580',
+  }
+
+
 section.panel
   div.panel-header
     h2.h2.title Литые диски для легковых автомобилей
-    a(href!=`{{ route "catalog" }}`).btn-arrow.btn-round Каталог
+    a(href="").btn-arrow.btn-round Каталог
   div.panel-body
     include ../box/model-box
 
-    | {{range $featuredProducts := .FeaturedProducts}}
-    +model-box(require('../../../images/worx.jpg'), 'featuredProducts')
-    | {{end}}
+    +model-box(require('../../../images/worx.jpg'), data)
+    +model-box(require('../../../images/worx.jpg'), data)
+    +model-box(require('../../../images/worx.jpg'), data)
+    +model-box(require('../../../images/worx.jpg'), data)
