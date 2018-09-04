@@ -14,8 +14,7 @@ mixin header(theme, src)
     div(class="header-bottom " + theme)
       div.container-lg
         div.header-logo
-          //- a(href!=`{{ route "card" id"3" }}`)
-          a(href!=`{{ route "home" }}`)
+          a(href="/")
             if theme === 'black'
               img(src=src).logo
             else
