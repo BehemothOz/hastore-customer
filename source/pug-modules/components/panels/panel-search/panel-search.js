@@ -12,7 +12,7 @@ formSearch.addEventListener('submit', function(e) {
   /* Временный вызов (для примера работоспособности)
   Удалить, когда будет прописан запрос
   Т.к. обновление страницы сброить все disable у input */
-  // disableInputWithEmptyValue(formSearch);
+  disableInputWithEmptyValue(formSearch);
 });
 
 customSelect({

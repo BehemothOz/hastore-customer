@@ -80,6 +80,6 @@ customSelect({
   optionSelector: '.custom-select-option',
   inputHidden: '.custom-input',
   onSelect: function(field, value) {
-      handleChange();
+      // handleChange();
   }
 });

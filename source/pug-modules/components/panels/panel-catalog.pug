@@ -1,10 +1,44 @@
+-
+  var data = [
+    {
+      name: 'TBL XS47 SpaceX',
+      minPrice: '19 580',
+    },
+    {
+      name: 'MB 52',
+      minPrice: '11 000',
+    },
+    {
+      name: 'XL O87A Qert',
+      minPrice: '9 8000',
+    },
+    {
+      name: 'Mxoc Betelgaze',
+      minPrice: '25 9000',
+    },
+    {
+      name: 'TBL XS47 SpaceX',
+      minPrice: '19 580',
+    },
+    {
+      name: 'MB 52',
+      minPrice: '11 000',
+    },
+    {
+      name: 'XL O87A Qert',
+      minPrice: '9 8000',
+    },
+    {
+      name: 'Mxoc Betelgaze',
+      minPrice: '25 9000',
+    }
+  ]
+
 section.panel.panel-catalog-list
   div.panel-body
     include ../box/model-box
-
-    | {{range $productsList := .ProductsList.List}}
-    +model-box(require('../../../images/worx.jpg'), 'productsList')
-    | {{end}}
+    each x in data
+      +model-box(require('../../../images/worx.jpg'), x)
 
   div.panel-footer
     include ../pagination/pagination
