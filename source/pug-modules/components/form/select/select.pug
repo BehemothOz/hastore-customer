@@ -4,6 +4,5 @@ mixin select-custom(placeholder, goName)
     input(type="hidden" name=goName.toLowerCase()).custom-input
     ul.custom-select-options
       li.custom-select-option(data-value="init") Любая
-      | {{ range .Filters.#{goName} }}
-      li.custom-select-option {{ . }}
-      | {{ end }}
+      each value in [1, 2, 3, 4, 5, 6]
+        li.custom-select-option= value

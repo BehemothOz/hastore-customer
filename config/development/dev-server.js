@@ -6,7 +6,7 @@ module.exports = function() {
       contentBase: './dev-build/',
       // publicPath: "/assets/",
       stats: 'errors-only',
-      port: 1221
+      port: 1222
     }
   }
 };
