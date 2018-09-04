@@ -1,33 +1,15 @@
-mixin model-box(src, data)
-  - data = data
+mixin model-box(src, data, colors)
+  - colors = ["Brushed Titanium", "Brronze Metalic", "Gunmetal", "Carbon Graphite", "Satin Black"]
   div.model-box
     div.visible-box
       img(src=src).image
-      div.name {{ $#{data}.Name }}
-      div.price от #[span.price-count {{ money $#{data}.GetMeta.MinPrice 0 }}] #[span.rub ₽] за 1 шт
+      div.name= data.name
+      div.price от #[span.price-count= data.minPrice] #[span.rub ₽] за 1 шт
 
-    //- div.hidden-box
-    //-   |{{ $colors := $#{data}.GetMods | $#{data}.GetColors }}
-    //-   |{{ if (len $colors | ne 0) }}
-    //-   //- div Has Colors
-      
-    //-   div.color-title цвета
-    //-   ul.color-list
-    //-     | {{ range $#{data}.GetMods | $#{data}.GetColors }}
-    //-     li.color #[a(href="") {{ . }}]
-    //-     | {{ end }}
-    //-   |{{ else }}
-    //-   div asdasdasdasd
-    //-   |{{ end }}
     div.hidden-box
-      | {{ $colors := $#{data}.GetMods | $#{data}.GetColors }}
-      | {{ if (len $colors | ne 0) }}
       div.color-title цвета
-          ul.color-list
-            li.color #[a(href="") {{ len $colors }}]
-            | {{ range $colors }}
-            li.color #[a(href="") {{ . }}]
-            | {{ end }}
-      | {{ end }}
+        ul.color-list
+          each color in colors
+            li.color #[a(href="")= color]
 
-      a(href!=`{{ printf "%v" $` + data + `.ID | route "product" "id" }}` role="button").btn.btn-block.btn-green.btn-round.btn-box Перейти к товару
+      a(href="" role="button").btn.btn-block.btn-green.btn-round.btn-box Перейти к товару

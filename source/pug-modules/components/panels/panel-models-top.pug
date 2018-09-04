@@ -1,3 +1,9 @@
+-
+  var data = {
+    name: 'KMC XD755 Rockstar',
+    minPrice: '14 900',
+  }
+
 section.panel
   div.panel-header
     h2.h2.title Самые продаваемые модели 2017 года
@@ -5,6 +11,7 @@ section.panel
   div.panel-body
     include ../box/model-box
 
-    | {{range $hitProducts := .HitProducts}}
-    +model-box(require('../../../images/worx.jpg'), 'hitProducts')
-    | {{end}}
+    +model-box(require('../../../images/worx.jpg'), data)
+    +model-box(require('../../../images/worx.jpg'), data)
+    +model-box(require('../../../images/worx.jpg'), data)
+    +model-box(require('../../../images/worx.jpg'), data)
